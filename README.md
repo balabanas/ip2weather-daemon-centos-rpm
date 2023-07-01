@@ -22,7 +22,7 @@ RPM with IP-to-Weather (ip2w) uWSGI daemon for CentOS 7, designed to run behind 
 * nginx is installed and running
 * python-requests is installed
 
-## Build
+## Clone & build
 Assuming you have already configured your CentOS OS as described below (see **CentOS configuration**):
 * `git config --global user.name "Your Name"`
 * `git config --global user.email "youremail@gmail.com"`
@@ -38,14 +38,17 @@ After installation, edit `/usr/local/etc/ip2w.ini`, setting your secret API key 
 * `env=WEATHER_API_KEY=<your API key for api.openweathermap.org>`
 
 Start ip2w and check if necessary services are running:
-* `systemctl start ip2w`
+* `systemctl restart ip2w`
 * `systemctl status ip2w`
 * `systemctl status nginx`
 
 If statuses are OK, check if app responses:
 * `curl http://127.0.0.1:80/ip2w/195.69.81.52`
 
-### CentOS Configuration
+## More tests
+`python3 test.py`
+
+## CentOS Configuration
 If you're, like me, using a Windows development environment, running Linux in Docker may not be suitable due to the need to work with systemctl/systemd, which is not readily available in Docker containers. In this case, you can use Oracle's VirtualBox and follow the steps below:
 * http://centos.koyanet.lv/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-Everything-2009.iso
 
