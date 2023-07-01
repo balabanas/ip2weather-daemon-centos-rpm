@@ -104,7 +104,12 @@ pip install requests uwsgi
 ```
 
 ## Uninstall
-yum remove -y ip2w
+`yum remove -y ip2w`
+`rm -fr /root/ip2weather-daemon-centos-rpm`
+
+## Mind the `git`
+If you are tweaking code straight on the guest OS after cloning, don't forget to commit before installing rpm again and again:
+`git commit -am 'one more fix'`
 
 ## Links
 * https://www.digitalocean.com/community/tutorials/how-to-set-up-uwsgi-and-nginx-to-serve-python-apps-on-centos-7
