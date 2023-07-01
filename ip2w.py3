@@ -53,9 +53,8 @@ def get_location_by_ip(ip: str) -> Tuple[int, str]:
         if 'city' in response:
             return OK, response['city']
     except requests.RequestException:
-        pass
-    finally:
         return INTERNAL_ERROR, "An exception occured during IP attribution"
+    return INTERNAL_ERROR, "Other exception"
 
 
 def get_weather_by_location(city: str) -> Tuple[int, Union[dict, str]]:

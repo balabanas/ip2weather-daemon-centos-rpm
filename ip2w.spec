@@ -45,6 +45,7 @@ Git version: %{git_version} (branch: %{git_branch})
 %post
 %systemd_post %{name}.service
 systemctl enable ip2w
+systemctl start ip2w
 systemctl daemon-reload
 
 %preun
