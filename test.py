@@ -16,15 +16,16 @@ class TestRequestResponse(unittest.TestCase):
         self.conn.request("GET", "/ip2w/195.69.81.52")
         r = self.conn.getresponse()
         self.assertEqual(200, int(r.status))
-        r.msg
 
     def test_incorrect_or_no_ip(self):
         """Incorrect or no IP - 400"""
         self.conn.request("GET", "/ip2w/111.1111")
         r = self.conn.getresponse()
+        r.read()
         self.assertEqual(400, int(r.status))
         self.conn.request("GET", "/ip2w/")
         r = self.conn.getresponse()
+        r.read()
         self.assertEqual(400, int(r.status))
 
     def test_nolocation_ip(self):
