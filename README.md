@@ -90,7 +90,7 @@ firewall-cmd --reload
 semanage permissive -a httpd_t
 ```
 
-Install Python 3, create a virtual environment, and install required packages^
+Install Python 3, create a virtual environment, and install required packages:
 ```
 yum install -y python3
 yum install -y python3-pip python3-devel gcc
