@@ -118,3 +118,7 @@ If you are tweaking code straight on the guest OS after cloning, don't forget to
 * https://www.digitalocean.com/community/tutorials/how-to-set-up-uwsgi-and-nginx-to-serve-python-apps-on-centos-7
 * https://refspecs.linuxfoundation.org/FHS_3.0/fhs-3.0.pdf
 * The RPM packaging process in this project was based on ideas from the following solution: https://github.com/olegborzov/otus-python-0218-homework/blob/master/hw5
+
+## TODOs
+1. Create .env file and read it with python-dotenv to avoid manual edit of .ini file after rpm installation
+2. Add description how to run uWSGI under user different from root
